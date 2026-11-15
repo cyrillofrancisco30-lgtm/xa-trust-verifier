@@ -1,28 +1,32 @@
+
+
 Autoria, identidade e originalidade do projeto
 
-*Projeto:* XA Trust Verifier
-*Versão:* v1.0.0
-*Autor e mantenedor declarado:* Francisco Fernando Lopes Cyrillo
-*Repositório:* cyrillofrancisco30-lgtm/xa-verificador-de-confiança
-*Licença:* MIT
+_Projeto:_ XA Trust Verifier
+_Versão:_ v1.0.0
+_Autor e mantenedor declarado:_ Francisco Fernando Lopes Cyrillo
+_Repositório:_ cyrillofrancisco30-lgtm/xa-trust-verifier
+_Licença:_ MIT
 
 O que este documento é
 
-Este documento é uma *declaração de autoria*. Não é uma prova criptográfica de autoria, não é uma assinatura digital, e não substitui a verificação técnica dos artefatos.
+Este documento é uma _declaração de autoria_. Não é uma prova criptográfica de autoria, não é uma assinatura digital, e não substitui a verificação técnica dos artefatos.
+
+A autoria declarada aqui deve ser avaliada junto com os mecanismos do repositório: histórico de commits, hashes dos arquivos, e o código de verificação.
 
 O que o projeto faz
 
-O XA Trust Verifier é uma verificação de *consistência lógica local* de evidências digitais.
+O XA Trust Verifier é uma implementação específica de verificação de _consistência lógica local_ de evidências digitais, identificada por sua estrutura de código, seus artefatos, seus mecanismos de validação e seu histórico de desenvolvimento.
 
 Ele verifica:
 - Se os arquivos não mudaram depois da geração da evidência
 - Se a estrutura do envelope AEP está completa
 - Se os hashes batem com o baseline congelado
 
-Ele *não* verifica, nesta versão:
-- Assinatura criptográfica Ed25519 - NOT IMPLEMENTED
-- Autorização do executor no GitHub Actions - NOT IMPLEMENTED
-- Identidade do autor por chave pública - NOT IMPLEMENTED
+Ele _não_ verifica, nesta versão:
+- Verificação de assinatura criptográfica Ed25519 - NOT IMPLEMENTED neste projeto
+- Verificação de quem executou / autorizou a execução no GitHub Actions - NOT IMPLEMENTED neste projeto
+- Verificação de identidade do autor por chave pública - NOT IMPLEMENTED neste projeto
 
 O código-fonte em `verify_aep.py` declara esses limites explicitamente.
 
@@ -30,7 +34,9 @@ Varredura comparativa
 
 Na varredura comparativa realizada em 15/11/2026 via busca pública no GitHub / web, não foram identificados outros repositórios correspondentes à combinação exata do nome do projeto, dos arquivos `verify_aep.py` e `evidence.json` e da identificação de autoria pesquisada.
 
-Esse resultado documenta a ausência de correspondências identificadas no escopo da pesquisa, *não constituindo prova de inexistência de projetos semelhantes ou declaração de exclusividade mundial.*
+Esse resultado documenta a ausência de correspondências identificadas no escopo da pesquisa, _não constituindo prova de inexistência de projetos semelhantes ou declaração de exclusividade mundial._
+
+Esta busca é uma observação em uma data específica, não um registro permanente. Para reproduzir, repita a busca pelos termos exatos do nome do projeto e dos arquivos.
 
 Como verificar
 
@@ -40,4 +46,4 @@ Isso confere se `evidence.json` e os arquivos atuais continuam consistentes com 
 
 Nota sobre licença
 
-*Nota:* A licença MIT estabelece as condições de utilização e distribuição do software, não constituindo, isoladamente, prova de titularidade exclusiva de todos os elementos associados ao projeto.
+A licença MIT estabelece as condições de utilização e distribuição do software, não constituindo, isoladamente, prova de titularidade exclusiva de todos os elementos associados ao projeto.
