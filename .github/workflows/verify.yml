@@ -13,6 +13,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
+      - run: pytest test_api_client_executor.py -v
       - run: python verify_automation.py
       - uses: actions/upload-artifact@v4
         with:
