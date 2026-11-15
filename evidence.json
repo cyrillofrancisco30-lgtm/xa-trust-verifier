@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "files": {
+    "README.md": "fd3dee8bf0a8a3810cce214c37766a5317cffd1ad7f06ae30cc22e854af12f81",
+    "requirements.txt": "3c107420df879ffd72e3f705859e26f2073c19884c6fff37c342a3be4f600b9e",
+    "verify_automation.py": "80e96c38c5ac0fb66abe7476b8caa5c08b940d14d0e5e27fd8604940005d269d"
+  }
+}
