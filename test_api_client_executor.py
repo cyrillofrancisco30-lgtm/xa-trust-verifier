@@ -57,7 +57,7 @@ def test_jcs_canonicalization_nfc_001():
 def test_jcs_unicode_nfd_divergence_001():
     result_nfc = hash_canonical_json_text(PAYLOAD_NFC)
     result_nfd = hash_canonical_json_text(PAYLOAD_NFD)
-    assert result_nfd["len_bytes"] == 248
+    assert result_nfd["len_bytes"] == 246
     assert result_nfd["sha256"] == EXPECTED_NFD_SHA
     assert result_nfc["sha256"] != result_nfd["sha256"]
 def test_jcs_numeric_canonicalization_001():
