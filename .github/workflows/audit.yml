@@ -1,0 +1,39 @@
+name: audit-v233
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "api_client_executor.py"
+      - "test_v233.py"
+      - "runner_v233.py"
+      - "requirements.txt"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar deps
+        run: pip install -r requirements.txt
+
+      - name: Rodar auditoria
+        run: python runner_v233.py
+
+      - name: Mostrar manifesto
+        if: always()
+        run: cat evidence_v233.json
+
+      - name: Salvar evidência
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-v233
+          path: |
+            evidence_v233.json
+            outcomes_partial.json
