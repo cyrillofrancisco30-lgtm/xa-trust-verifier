@@ -1,17 +1,43 @@
-# Autoria, identidade e originalidade do projeto
+Autoria, identidade e originalidade do projeto
 
-**Projeto:** XA Trust Verifier
-**Versão:** v1.0.0
-**Autor e mantenedor declarado:** Francisco Fernando Lopes Cyrillo
-**Repositório:** cyrillofrancisco30-lgtm/xa-trust-verifier
-**Licença:** MIT
+*Projeto:* XA Trust Verifier
+*Versão:* v1.0.0
+*Autor e mantenedor declarado:* Francisco Fernando Lopes Cyrillo
+*Repositório:* cyrillofrancisco30-lgtm/xa-verificador-de-confiança
+*Licença:* MIT
 
-O XA Trust Verifier é uma implementação específica de verificação de evidências digitais, identificada por sua estrutura de código, seus artefatos, seus mecanismos de validação e seu histórico de desenvolvimento.
+O que este documento é
 
-Na varredura comparativa realizada em 15/11/2026 via busca pública no GitHub / web, não foram identificados outros repositórios correspondentes à combinação exata do nome do projeto, dos arquivos "verify_aep.py" e "evidencia.json" e da identificação de autoria pesquisada.
+Este documento é uma *declaração de autoria*. Não é uma prova criptográfica de autoria, não é uma assinatura digital, e não substitui a verificação técnica dos artefatos.
 
-Esse resultado documenta a ausência de correspondências identificadas no escopo da pesquisa, não constituindo prova de inexistência de projetos semelhantes ou declaração de exclusividade mundial.
+O que o projeto faz
 
-A autoria, a integridade dos artefatos e a validade das evidências devem ser avaliadas conforme seus respectivos registros e mecanismos de verificação.
+O XA Trust Verifier é uma verificação de *consistência lógica local* de evidências digitais.
 
-**Nota:** A licença MIT estabelece as condições de utilização e distribuição do software, não constituindo, isoladamente, prova de titularidade exclusiva de todos os elementos associados ao projeto.
+Ele verifica:
+- Se os arquivos não mudaram depois da geração da evidência
+- Se a estrutura do envelope AEP está completa
+- Se os hashes batem com o baseline congelado
+
+Ele *não* verifica, nesta versão:
+- Assinatura criptográfica Ed25519 - NOT IMPLEMENTED
+- Autorização do executor no GitHub Actions - NOT IMPLEMENTED
+- Identidade do autor por chave pública - NOT IMPLEMENTED
+
+O código-fonte em `verify_aep.py` declara esses limites explicitamente.
+
+Varredura comparativa
+
+Na varredura comparativa realizada em 15/11/2026 via busca pública no GitHub / web, não foram identificados outros repositórios correspondentes à combinação exata do nome do projeto, dos arquivos `verify_aep.py` e `evidence.json` e da identificação de autoria pesquisada.
+
+Esse resultado documenta a ausência de correspondências identificadas no escopo da pesquisa, *não constituindo prova de inexistência de projetos semelhantes ou declaração de exclusividade mundial.*
+
+Como verificar
+
+Qualquer pessoa pode verificar a consistência atual com:
+python verify_aep.py verify
+Isso confere se `evidence.json` e os arquivos atuais continuam consistentes com o baseline congelado no código. Não prova quem gerou a evidência original.
+
+Nota sobre licença
+
+*Nota:* A licença MIT estabelece as condições de utilização e distribuição do software, não constituindo, isoladamente, prova de titularidade exclusiva de todos os elementos associados ao projeto.
