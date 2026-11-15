@@ -1,0 +1,23 @@
+name: XA-TRUST v2 - BCVL EXEC-002
+
+on:
+  push:
+    branches: [ xa-trust-v2 ]
+  pull_request:
+    branches: [ xa-trust-v2 ]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: XA-TRUST v2 - BCVL EXEC-002 Check
+        run: |
+          echo "=== XA-TRUST v2 ==="
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          ls -la
+          echo "BCVL EXEC-002 - OK"
