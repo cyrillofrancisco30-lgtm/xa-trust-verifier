@@ -2,27 +2,19 @@
 
 Projeto original de Cyrillo Francisco.
 
-O XA Trust Verifier verifica evidencias de forma simples e independente.
+O XA Trust Verifier verifica evidências de forma simples e independente.
+
+> **Tese:** Não basta demonstrar que uma execução aconteceu.
+> É necessário demonstrar quais afirmações aquela evidência autoriza, em qual escopo e sob quais condições de confiança.
+
+---
 
 ## O que faz
 
-- Verifica evidence.json usando verify_aep.py
-- Confirma se a evidencia e valida
-- Gera resultado claro de verificacao
+- Verifica evidências de execução (E4)
+- Verifica vínculo criptográfico (E5)
+- Exige verificação independente para promover confiança (E6)
+- Decide por claim, com escopo delimitado (E7)
+- Verifica o pacote completo (verificação global)
 
-## Arquivos
-
-- verify_aep.py - script de verificacao
-- evidence.json - evidencia a ser verificada
-
-## Como usar
-
-python verify_aep.py
-
-## Release
-
-Versao atual: v1.0.0
-
-## Autor
-
-Cyrillo Francisco - Projeto original
+## Regra congelada
