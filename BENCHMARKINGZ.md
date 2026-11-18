@@ -94,3 +94,24 @@ Afirmações sobre concorrentes refletem a documentação consultada até 2026-1
 
 Projeto open-source de verificação de software.
 Sem relação com X-Trust Inc., A-Trust GmbH, TRUST-X ou qualquer instituição financeira.
+
+
+---
+
+## Governança de claims — E3 a E7 por claim
+
+**Regra:** Cada claim tem governança própria. Nenhum claim herda confiança de outro claim, de outra etapa ou de outra execução.
+
+| Etapa | O que governa | Regra por claim |
+| --- | --- | --- |
+| E3 | Escopo do claim | Um claim só vale dentro do escopo declarado |
+| E4 | Evidência | Um claim só vale com a evidência vinculada a ele |
+| E5 | Proveniência | Um claim só vale com proveniência verificável |
+| E6 | Integridade | Qualquer quebra de integridade invalida só aquele claim |
+| E7 | Decisão de confiança | Decisão é por claim, não por arquivo, lote ou projeto |
+
+**Princípios:**
+- 1 claim = 1 escopo + 1 evidência + 1 decisão
+- Falha em um claim não contamina os outros
+- Sem evidência vinculada, sem confiança
+- Sem escopo declarado, sem validade
