@@ -102,4 +102,4 @@ Esta é uma análise técnica comparativa, não uma avaliação independente de 
 
 ---
 Aviso legal
-Projeto open-source de verificação de software. Sem relação com X-Trust Inc., A-Trust GmbH, TRUST-X ou qualquer instituição financeira. 
+Projeto open-source de verificação de software. Sem relação com X-Trust Inc., A-Trust GmbH, TRUST-X ou qualquer instituição financeira.
