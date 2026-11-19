@@ -4,38 +4,47 @@ Evidência verificável de execução. Não é promessa, é prova.
 
 Projeto original de Cyrillo Francisco - Francisco Fernando Lopes Cyrillo.
 
+## Verificação de Claims - individual
+
+Verifica 1 claim: `xa-trust/evidence/claim.json`
+
+Confere:
+- JCS (RFC 8785) - canonicalização correta?
+- SHA-256 - `digest_sha256` bate com `manifest_jcs`?
+- Ed25519 - `signature_ed25519` é válida?
+- API-12 - SHA256_PAYLOAD_MATCH
+
+Se 1 falhar, esse claim é `FAIL`.
+
+## Verificação Global - Scope
+
+Verifica o lote inteiro de uma vez. Não verifica só 1 arquivo.
+
+Scope da verificação global:
+- Todos os `claim.json` em `xa-trust/evidence/`
+- Todos os `manifest` de cada claim
+- Todos os `digest_sha256`
+- Todas as `signature_ed25519`
+- API-22 - MERKLE_PROOF_VALID - a árvore Merkle fecha?
+- Nenhum claim alterado depois de assinado
+- Nenhum claim duplicado
+- Nenhum claim faltando
+- Ordem e integridade do lote inteiro
+
+Resultado só é `VERIFIED GLOBAL` se TODOS passarem.
+Se 1 falhar, o lote inteiro é `FAIL`.
+
 ## Como funciona
 
-1. **Producer** cria o `manifest` com o que foi executado
-2. **JCS (RFC 8785)** canonicaliza o manifest -> `manifest_jcs`
-3. **SHA-256** do `manifest_jcs` -> `digest_sha256`
-4. **Ed25519** assina o `manifest_jcs` -> `signature_ed25519`
+1. **Producer** cria o `manifest`
+2. **JCS (RFC 8785)** -> `manifest_jcs`
+3. **SHA-256** -> `digest_sha256`
+4. **Ed25519** assina -> `signature_ed25519`
+5. Arquivo gerado: `xa-trust/evidence/claim.json`
 
-Arquivo gerado: `xa-trust/evidence/claim.json`
+## Como verificar
 
-## O que ele verifica
-
-- **API-12 - SHA256_PAYLOAD_MATCH:** o hash bate com o payload?
-- **API-22 - MERKLE_PROOF_VALID:** a prova de inclusão é válida?
-- **JCS + SHA-256 + Ed25519:** canonicalização, digest e assinatura conferem?
-
-Se um falhar, o resultado é `FAIL`.
-
-## Arquivos
-
-- `xa-trust/producer.py` - gera `evidence/claim.json`
-- `xa-trust/verifier.py` - verificação independente
-- `verify_aep.py` - verificação de evidência
-- `evidence.json` - evidência de exemplo
-- `.github/workflows/` - roda a verificação a cada push
-
-## Como verificar em 30 segundos
-
+Verificar 1 claim:
 ```bash
-pip install rfc8785 cryptography
-python3 xa-trust/producer.py
-python3 xa-trust/verifier.py
-
-
-VERIFIED - JCS + SHA256 + Ed25519 OK
+python3 xa-trust/verifier.py --claim xa-trust/evidence/claim.json
 
