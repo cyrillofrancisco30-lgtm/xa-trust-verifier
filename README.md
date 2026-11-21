@@ -1,4 +1,4 @@
-cat > README.md << 'EOF'
+
 Evidência verificável de execução. Não é promessa, é prova.
 
 Projeto original de Cyrillo Francisco.
@@ -62,5 +62,3 @@ Resultado: SUITE v1.1.6.5 COMPLETA
 Como verificar (SUITE E6):
 python3 e6_all_in_one.py
 Resultado: SUITE v1.1.6.4 COMPLETA
-EOF
-cat README.md
