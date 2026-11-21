@@ -1,0 +1,5 @@
+1. JCS canonical bate? True
+2. SHA-256 bate? True
+3. Ed25519 assinatura VALIDA? True
+
+RESULTADO: VERIFIED
