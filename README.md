@@ -1,6 +1,4 @@
 
-
-
 XA-TRUST — Infra de Governança Verificável por Claim
 
 > Não é selo. Não é PDF. É prova executável.
@@ -43,6 +41,13 @@ E7 = VERIFIED significa apenas:
 > Este claim específico satisfaz os requisitos de evidência, binding, integridade, verificação independente e política de promoção definidos para este escopo.
 
 Não significa que o sistema inteiro é verdadeiro, seguro ou globalmente verificado.
+
+Governança Global x Verificação por Claim
+
+- Governança é global: mesmo motor E7, mesmas regras de quorum, veto e janela para todos os claims.
+- Verificação é claim-scoped: VERIFIED(CLAIM-X) ↛ VERIFIED(CLAIM-Y) e ↛ GLOBAL_VERIFIED.
+
+Motor global, prova por claim.
 
 ---
 
@@ -115,11 +120,11 @@ A cadeia correta é:
 
 workflow_run.completed
 ↓
-event.workflow_run.id
+http://event.workflow_run.id
 ↓
 GET /actions/runs/{same_id}
 ↓
-eventRun.id === apiRun.id
+http://eventRun.id === http://apiRun.id
 ↓
 E3 — EXECUTION_EVENT_EVIDENCE
 ↓
@@ -135,7 +140,7 @@ E7 — CLAIM-SCOPED VERIFIED
 
 Validação obrigatória contra substitution:
 
-if (Number(eventRun.id) !== run.id) {
+if (Number(eventRun.id) !== http://run.id) {
 throw new Error("WORKFLOW_RUN_ID_MISMATCH");
 }
 
@@ -152,9 +157,13 @@ O Que Este Repositório NÃO Prova
 
 Posicionamento
 
-Infra de confiança programável.
+XA-TRUST — Infraestrutura de Confiança Programável. Projeto brasileiro que apresenta uma implementação reproduzível de governança de confiança por claim, com quórum, veto e janela temporal, demonstrada por suíte executada em clone limpo.
 
-Primeira infraestrutura no Brasil de Governança Verificável por Claim com execução determinística em clone limpo, não-compensação entre evidências (E3–E7) e motor nativo de quorum, veto e janela temporal.
+Diferencial nº 1 — Governança Global como Motor Único
+
+Um único motor E7 governa todos os claims. Mesmas regras de quorum, veto, janela e elegibilidade para o software inteiro. Não é governança por planilha ou por fluxo solto, é governança global executável.
+
+Motor global, prova por claim.
 
 Enquanto o mercado entrega PDFs de auditoria, logs mutáveis ou apenas proveniência de build, o XA-TRUST transforma exigências regulatórias (BCB / ANPD) em prova executável por escopo — auditável em 1 comando.
 
@@ -165,7 +174,15 @@ Para bancos, governo, saúde e empresas reguladas:
 Por que ninguém mais cobre essa interseção
 
 - GRC Tradicional BR: tem fluxo de aprovação, não tem prova criptográfica por claim nem replay em clone limpo.
-- Gov.br / Serpro / ITI: tem identidade e atributo, não tem governança de promoção de artefatos e decisões.
+- http://Gov.br / Serpro / ITI: tem identidade e atributo, não tem governança de promoção de artefatos e decisões.
 - SLSA / in-toto / Sigstore: tem proveniência de build, não tem quorum, veto e janela nativos por claim.
 - Fintech / RegTech: tem trilha de auditoria, não tem verificação independente agnóstica em clone limpo.
+
+Os 4 Pilares
+
+- Fim da Autoatestação de Pipeline: workflow_run ≠ VERIFIED. Integridade de artefato não implica verdade semântica.
+- Axioma de Não-Compensação: E3 ∧ E4 ∧ E5 ∧ E6 ∧ POLICY. Sem scoring. Falhou um, NO_PROMOTION.
+- Governança Executável: quorum, veto e janela como código determinístico dentro do ciclo de verificação.
+- Reprodutibilidade em Clone Limpo: qualquer auditor clona e roda e6_all_in_one.py e e7_all_in_one.py, sem depender de SaaS proprietário.
+---
 
