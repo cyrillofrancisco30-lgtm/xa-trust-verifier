@@ -1,30 +1,43 @@
-# PITCH-BANCO - XA-TRUST - 21/11/2026
+# XA-TRUST - PITCH BANCO
 
-## Pitch de 2 linhas
+## Tese
+Elas vendem dashboard e PDF que pedem confiança no fornecedor.
+Eu vendo código que trava dinheiro sem prova.
 
-Elas vendem dashboard e PDF que pedem confianca no fornecedor.
-Eu vendo codigo que trava dinheiro sem prova.
+## Diagnóstico
+Hoje o banco paga com base em relatório do fornecedor.
+O fornecedor controla a medição, o relatório e a prova.
+Isso é confiança, não verificação.
 
-Eu nao aprovo sozinho. Sem quorum 2, dentro da janela e sem veto,
-o codigo bloqueia - e qualquer auditor prova isso em 1 comando,
-ate em clone limpo no celular.
+## Diferencial XA-TRUST
+1. JCS + SHA-256 + Ed25519: cada declaração é canônica, com hash e assinatura verificável.
+2. Replay em clone limpo: o banco reproduz a verificação no seu próprio ambiente, sem depender da infraestrutura do fornecedor.
+3. Sem SaaS proprietário: verificação com código aberto e dependências mínimas.
+4. Governança por quórum: 2 aprovadores independentes.
+5. Veto individual: 1 veto trava a promoção.
+6. Bloqueio de pagamento: sem E6 PASS + E7 PROMOTED, sem pagamento.
 
-## Diagnostico
+## Regra de Governança Global
+NO INDEPENDENT VERIFICATION → NO E7 PROMOTION
 
-RegTech entrega: SaaS centralizado, dashboard, PDF. Depende de confiar no servidor do emissor.
-XA-TRUST entrega: codigo deterministico autocontido. JCS + SHA-256 + Ed25519.
-Replay em clone limpo, sem SaaS proprietario, sem segredo interno.
+VERIFIED é por claim, não global.
+Cada claim precisa ser verificado individualmente.
 
-## Por que Clone Limpo e assimetria real
+## Prova Reprodutível
+O auditor pode reproduzir a verificação em 1 comando, em ambiente com Python 3.11+ e os arquivos deste repositório:
 
-1. Zero dependencia do emissor. Passou so com Python no Android.
-2. Auditabilidade soberana. Banco nao precisa contratar a nuvem do emissor para auditar.
-3. Impossivel maquiar demo. Nao e tela gravada, e log de execucao completo.
+python3 verificar_claim.py
 
-## Regra de Governanca Global
+Resultado esperado: VERIFIED
 
-Sem PROMOTED, sem pagamento. Sem E6 PASS + E7 PROMOTED, cadeia trava.
-1 veto bloqueia. 1 aprovador sozinho nao libera.
-Golden Rule: Sem verificacao independente, sem promocao.
+Artefatos para reprodução:
+- claim.json
+- verificar_claim.py
+- Log de execução em clone limpo
 
-VERIFIED(CLAIM-E7, SCOPE-E7) - por claim, nao global.
+## O que o XA-TRUST prova hoje
+Prova que uma declaração específica foi assinada, não alterada e pode ser verificada de forma independente.
+
+## O que ainda está em homologação
+Implementação completa do bloqueio financeiro por quórum, veto e promoção E6/E7 em ambiente Azure + Terraform.
+Homologação a ser executada com acesso limitado, sem dados críticos do cliente.
