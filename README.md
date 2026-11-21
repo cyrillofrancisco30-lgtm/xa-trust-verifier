@@ -47,14 +47,3 @@ Se 1 falhar, o lote inteiro é `FAIL`.
 Verificar 1 claim:
 ```bash
 python3 xa-trust/verifier.py --claim xa-trust/evidence/claim.json
-
-
-python3 xa-trust/verifier.py --global
-
-
-VERIFIED - JCS + SHA256 + Ed25519 OK
-VERIFIED GLOBAL - All claims valid
-
-
-
-
