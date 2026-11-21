@@ -2,48 +2,29 @@
 
 Evidência verificável de execução. Não é promessa, é prova.
 
-Projeto original de Cyrillo Francisco - Francisco Fernando Lopes Cyrillo.
+Projeto original de Cyrillo Francisco.
 
 ## Verificação de Claims - individual
 
-Verifica 1 claim: `xa-trust/evidence/claim.json`
+Verifica 1 claim: claim.json
 
-Confere:
-- JCS (RFC 8785) - canonicalização correta?
-- SHA-256 - `digest_sha256` bate com `manifest_jcs`?
-- Ed25519 - `signature_ed25519` é válida?
-- API-12 - SHA256_PAYLOAD_MATCH
+## Status
+CRYPTOGRAPHIC CHECKS: PASS
+E3: REPORTED
+E4: ARTIFACT REPORTED
+E5: CRYPTOGRAPHIC VALIDATION REPORTED
+E6: PENDING_INDEPENDENT_VERIFICATION
+E7: NOT ESTABLISHED
 
-Se 1 falhar, esse claim é `FAIL`.
+No homologation claimed. No E7 claimed before E6.
 
-## Verificação Global - Scope
+## Como verificar (E6)
+python3 verificar_claim.py
 
-Verifica o lote inteiro de uma vez. Não verifica só 1 arquivo.
+Esperado:
+1. JCS canonical bate? True
+2. SHA-256 bate? True
+3. Ed25519 assinatura VALIDA? True
+RESULTADO: VERIFIED
 
-Scope da verificação global:
-- Todos os `claim.json` em `xa-trust/evidence/`
-- Todos os `manifest` de cada claim
-- Todos os `digest_sha256`
-- Todas as `signature_ed25519`
-- API-22 - MERKLE_PROOF_VALID - a árvore Merkle fecha?
-- Nenhum claim alterado depois de assinado
-- Nenhum claim duplicado
-- Nenhum claim faltando
-- Ordem e integridade do lote inteiro
-
-Resultado só é `VERIFIED GLOBAL` se TODOS passarem.
-Se 1 falhar, o lote inteiro é `FAIL`.
-
-## Como funciona
-
-1. **Producer** cria o `manifest`
-2. **JCS (RFC 8785)** -> `manifest_jcs`
-3. **SHA-256** -> `digest_sha256`
-4. **Ed25519** assina -> `signature_ed25519`
-5. Arquivo gerado: `xa-trust/evidence/claim.json`
-
-## Como verificar
-
-Verificar 1 claim:
-```bash
-python3 xa-trust/verifier.py --claim xa-trust/evidence/claim.json
+canonical_sha256: cb65c565881f96c17b1cd6513439372972d8a75c30f45760771bcf0fa7457dba
