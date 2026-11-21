@@ -1,2 +1,5 @@
 minha_chave_privada.pem
-__pycache__/
+__pycache__/minha_chave_privada.pem
+*.pem
+minha_chave_privada.pem
+*.pem
