@@ -2,8 +2,8 @@
   "claim": {
     "autor": "Cyrillo Francisco",
     "projeto": "xa-trust-verifier",
-    "mensagem": "Eu sou o autor original deste projeto",
-    "data": "2026-11-18",
+    "mensagem": "Eu sou o autor original deste projeto - chave rotacionada v2",
+    "data": "2026-11-21",
     "policy": {
       "id": "verify-global",
       "version": "1.0"
@@ -12,10 +12,10 @@
       "action": "verify_automation"
     }
   },
-  "canonical": "{\"autor\":\"Cyrillo Francisco\",\"data\":\"2026-11-18\",\"intent\":{\"action\":\"verify_automation\"},\"mensagem\":\"Eu sou o autor original deste projeto\",\"policy\":{\"id\":\"verify-global\",\"version\":\"1.0\"},\"projeto\":\"xa-trust-verifier\"}",
-  "canonical_sha256": "cb65c565881f96c17b1cd6513439372972d8a75c30f45760771bcf0fa7457dba",
-  "signature_b64": "cxCsnBgL2kA9FvyKfIbXZRIID/q9AyMqzM0uZXILkqRjIc6tNClo6KBghryX7AOaXl644i2JxVzsg7sCx0JKAA==",
-  "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEApgM33vdvSjJwvrrq3mbqiLF4W4nj7cEOV9iyqi5DTjQ=\n-----END PUBLIC KEY-----\n",
+  "canonical": "{\"autor\":\"Cyrillo Francisco\",\"data\":\"2026-11-21\",\"intent\":{\"action\":\"verify_automation\"},\"mensagem\":\"Eu sou o autor original deste projeto - chave rotacionada v2\",\"policy\":{\"id\":\"verify-global\",\"version\":\"1.0\"},\"projeto\":\"xa-trust-verifier\"}",
+  "canonical_sha256": "bd93dfeba74315e48ae5d057897497017b771d61f60813b31f7ae00a3401f4e7",
+  "signature_b64": "NE8Ykm5SMQc2XMHVNkcodGFT2xPiast5usZyVMTUueeMbXR5OdHUnJxx0D/W/5DJMFgkngocNknAi+qwpYSHCA==",
+  "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA7ADafC54lDaqsQG6RTuMT2LJqftHf+fekW1NuxuI8OI=\n-----END PUBLIC KEY-----\n",
   "proof_type": "Ed25519+JCS-RFC8785",
-  "version": "1.0-single"
+  "version": "2.0-rotated"
 }
