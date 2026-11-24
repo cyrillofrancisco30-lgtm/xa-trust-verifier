@@ -6,6 +6,7 @@ try:
 except:
  rfc8785 = None
 from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 from cryptography.exceptions import InvalidSignature
 
 def fail(m):
@@ -24,7 +25,9 @@ def verify(p):
  if not can or not sha or not sig or not pub:
   return fail("Campos faltando")
  print("[E3] JCS RFC8785...")
- if rfc8785:
+ if rfc8785 is None:
+     return fail("RFC8785 indisponivel")
+ if True:
   exp = rfc8785.dumps(c).decode()
   if exp != can:
    return fail("JCS nao bate")
@@ -37,7 +40,9 @@ def verify(p):
  print("[E5] Ed25519...")
  try:
   k = serialization.load_pem_public_key(pub.encode())
-  k.verify(base64.b64decode(sig), can.encode())
+  if not isinstance(k, Ed25519PublicKey):
+      return fail("Chave nao e Ed25519")
+  k.verify(base64.b64decode(sig, validate=True), can.encode())
   print(" Signature: VALID")
  except InvalidSignature:
   return fail("Assinatura INVALIDA")
