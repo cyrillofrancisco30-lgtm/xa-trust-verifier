@@ -1,0 +1,1 @@
+{"e8":"revocation-propagates","rule":"revoked key must be rejected by fresh verifier within ttl"}
