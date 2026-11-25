@@ -1,10 +1,10 @@
 {
   "xa": "E13",
   "batch_id": 1,
-  "merkle_root": "b8cee58443423c5adacff3469df47d70158e70eade893e9f66f28330872ee275",
-  "op_return_hex": "6a225841b8cee58443423c5adacff3469df47d70158e70eade893e9f66f28330872ee275",
-  "txid_simulated": "b0b9e6e5857dc79f856a3a0b6ff976edeebf360be774c3254df34bf29cb0e919",
-  "timestamp": 1795619917,
+  "merkle_root": "fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
+  "op_return_hex": "6a225841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
+  "txid_simulated": "fa3722b55819af317d5af02b294bb583cd1cf71498db83753ecef9f5a5c6f000",
+  "timestamp": 1795636517,
   "items": 3,
-  "status": "ANCHORED"
+  "status": "SIMULATED"
 }

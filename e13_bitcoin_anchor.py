@@ -3,19 +3,17 @@ def H(b):
     return hashlib.sha256(b).hexdigest()
 def merkle(items):
     L=[]
-    for x in items:
-        s=json.dumps(x, sort_keys=True)
+    for i in items:
+        s=json.dumps(i, sort_keys=True).replace(' ','')
         L.append(H(s.encode()))
-    if not L:
-        return H(b"empty")
     while len(L)>1:
         N=[]
-        for i in range(0,len(L),2):
-            l=L[i]
-            r=L[i+1] if i+1<len(L) else l
+        for j in range(0,len(L),2):
+            l=L[j]
+            r=L[j+1] if j+1<len(L) else l
             N.append(H((l+r).encode()))
         L=N
-    return L[0]
+    return L[0] if L else ''
 def opret(root):
     d=bytes.fromhex("5841")
     d=d+bytes.fromhex(root)
@@ -32,7 +30,7 @@ def anchor(bid, items):
       "txid_simulated":tx,
       "timestamp":int(time.time()),
       "items":len(items),
-      "status":"ANCHORED"
+      "status":"SIMULATED"
     }
     open("anchor_proof.json","w").write(json.dumps(p,indent=2))
     return p

@@ -1,0 +1,9 @@
+{
+  "batch_id": 1,
+  "merkle_root": "fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
+  "op_return_hex": "585841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
+  "op_return_asm": "OP_RETURN 585841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
+  "status": "SIMULATED_BROADCAST",
+  "txid": "SIM-8c56472f86d1530a",
+  "note": "Transmita esse OP_RETURN numa tx real e preencha o txid aqui"
+}
