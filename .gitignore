@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 _t_*.json
 *.save
+minha_chave_privada.pem
+evidence.json
