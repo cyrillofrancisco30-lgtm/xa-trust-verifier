@@ -1,5 +1,6 @@
 keys/private.key
-keys/key-e6-01.json
+keys/private.key.enc
 __pycache__/
 *.pyc
-keys/private.key
+_t_*.json
+*.save
