@@ -1,3 +1,4 @@
+cat > ~/README.md << 'EOF'
 # XA Trust — Verificador de Confiança
 
 Um recibo só é VÁLIDO se passar em TUDO junto: assinatura + vigência + não revogado na emissão + claim de governança.
@@ -29,13 +30,52 @@ cd xa-trust-verifier
 pip install -r requirements.txt
 python3 e10_all_in_one.py
 
-## Implementação de referência
-verificar_claim.py é a implementação oficial. Utiliza RFC 8785 (JCS) + Ed25519.
+## RFC 8785 (JCS) — A base da prova
 
-Validado no Termux:
+JSON normal não é determinístico. O mesmo dado pode ser escrito de formas diferentes e continuar sendo o mesmo JSON. Se cada programa escrever de um jeito, o hash muda e a assinatura quebra, mesmo sem adulteração.
+
+A RFC 8785 é o JSON Canonicalization Scheme (JCS). Ela define UMA única forma certa de escrever qualquer JSON:
+- Chaves ordenadas por ordem Unicode
+- Sem espaços desnecessários
+- Sem quebras de linha
+- Números, strings e escapes sempre do mesmo jeito
+
+Mesmo conteúdo = mesmo texto = mesmo hash = mesma assinatura. Em qualquer linguagem, em qualquer máquina.
+
+Sem JCS, sem prova. Sem canonical, não dá para confiar no hash.
+
+## RFC 8785 na prática — Validado no Termux
+
 Input: {"b":1,"a":2}
 Canonical: {"a":2,"b":1}
 SHA256: d3626ac30a87e6f7a6428233b3c68299976865fa5508e4267c5415c76af7a772
+
+## Implementação de referência
+verificar_claim.py é a implementação oficial. Utiliza RFC 8785 (JCS) + Ed25519.
+
+Fluxo oficial:
+1. Pega o claim
+2. Canonicaliza com RFC 8785
+3. Calcula SHA256 do canonical
+4. Verifica a assinatura Ed25519 sobre o canonical, não sobre o JSON bagunçado
+
+## Verificação Independente - VERIFIED
+
+Verificador independente, sem confiar no emissor. Usa rfc8785 puro + Ed25519.
+
+pip install rfc8785 cryptography
+python3 verify_independent.py claim.json
+
+Resultado real no Termux:
+VERIFIED
+proof_type: Ed25519+JCS-RFC8785
+hash_claim_canonico: bd93dfeba74315e48ae5d0574fe1a4fa5e9a09f7d6e1b3e3a13d2c6cd1c40b
+motivo: canonical RFC8785 + hash + assinatura Ed25519 OK
+
+O que esse VERIFIED prova:
+- Canonical guardado = canonical recalculado pela RFC 8785 pura
+- Hash bate
+- Assinatura Ed25519 válida para a chave v2
 
 ## Demo
 e10_all_in_one.py é apenas demonstração de fluxo. Utiliza HMAC + json dumps. Serve para entender o fluxo E3-E7, mas NÃO é a prova criptográfica final.
@@ -69,3 +109,4 @@ E7 = verificação interna, padrão de mercado
 E14 = prova pública, nível cartório digital
 
 Não pedimos confiança. Pedimos verificação.
+EOF
