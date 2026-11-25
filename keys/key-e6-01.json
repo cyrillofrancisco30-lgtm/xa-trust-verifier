@@ -7,7 +7,8 @@
     "E5",
     "E6"
   ],
-  "revoked": false,
+  "revoked": true,
   "owner": "xa-trust-verifier E6",
-  "created_commit": "9fcadd6"
+  "created_commit": "9fcadd6",
+  "status": "revoked"
 }
