@@ -1,0 +1,8 @@
+{
+  "file": "keys/public.json",
+  "sha256": "e3819b079912a0816d37565bfad3db7f7bf9ad789d997a459a16202ed151f95f",
+  "alg": "Ed25519",
+  "key_id": "c553862d1a4d7f24",
+  "public_key_hex": "c07e308ae83bac8478616700e3d301e8dc029efaa2e594d1448d767cd79004ea",
+  "signature_hex": "3727f9d9237523d7ec6869a4ec75597b69aaf3c0af8bcedfd2fa65421d0fc860130bfa6cd0fa7dbb91d755851d20492dd5e3fee74c240e191f8c584031251709"
+}
