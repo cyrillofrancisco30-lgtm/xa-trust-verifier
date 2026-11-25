@@ -1,0 +1,6 @@
+{
+  "alg": "Ed25519",
+  "public_key_hex": "c07e308ae83bac8478616700e3d301e8dc029efaa2e594d1448d767cd79004ea",
+  "fingerprint_sha256": "c553862d1a4d7f24ccaa65d972748e9e338a878a2116d26011b719cb0bcc82af",
+  "key_id": "c553862d1a4d7f24"
+}
