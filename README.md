@@ -1,5 +1,3 @@
-cd ~
-cat > README.md << 'EOF'
 # XA Trust — Verificador de Confiança
 
 Um recibo só é VÁLIDO se passar em TUDO junto: assinatura + vigência + não revogado na emissão + claim de governança.
@@ -68,6 +66,3 @@ RFC 8785 (JCS) + Ed25519.
 Sem JCS, sem prova. Sem Ed25519, sem confiança.
 
 Não pedimos confiança. Pedimos verificação.
-EOF
-
-
