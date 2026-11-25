@@ -1,0 +1,10 @@
+{
+  "xa": "E13",
+  "batch_id": 1,
+  "merkle_root": "b8cee58443423c5adacff3469df47d70158e70eade893e9f66f28330872ee275",
+  "op_return_hex": "6a225841b8cee58443423c5adacff3469df47d70158e70eade893e9f66f28330872ee275",
+  "txid_simulated": "b0b9e6e5857dc79f856a3a0b6ff976edeebf360be774c3254df34bf29cb0e919",
+  "timestamp": 1795619917,
+  "items": 3,
+  "status": "ANCHORED"
+}
