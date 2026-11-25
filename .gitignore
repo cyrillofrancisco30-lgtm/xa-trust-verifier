@@ -2,3 +2,4 @@ keys/private.key
 keys/key-e6-01.json
 __pycache__/
 *.pyc
+keys/private.key
