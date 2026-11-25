@@ -49,6 +49,10 @@ def verify(p):
  except Exception as e:
   return fail("Ed25519 erro: " + str(e))
  print("[E6] Auditoria...")
+ if not c.get("autor") or not c.get("projeto"):
+  return fail("E6 Auditoria falhou: autor/projeto ausente")
+ if not c.get("politica") and not c.get("policy"):
+  return fail("E6 Auditoria falhou: politica ausente")
  print(" Autor: " + str(c.get("autor", "N/A")))
  print(" Projeto: " + str(c.get("projeto", "N/A")))
  print(" Publica sem chave privada: OK")
