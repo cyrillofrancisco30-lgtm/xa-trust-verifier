@@ -1,7 +1,5 @@
 name: XA Finance - Verify Loop
-
 on: [push, pull_request]
-
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -10,7 +8,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install deps
+        run: pip install cryptography rfc8785 pytest
       - name: Run deterministic loop
         run: |
-          python -m pytest -q || python verify.py || ls -la
+          python3 verify_independent.py claim.json
+          python3 -m pytest -q
           echo "REPLAY_OK"
