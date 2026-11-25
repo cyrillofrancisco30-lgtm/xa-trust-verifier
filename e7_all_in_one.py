@@ -1,7 +1,7 @@
 # XA-TRUST E7 v1.1.6.5 - TUDO EM 1 ARQUIVO
 # E7 = E5 + E6 + PROMOCAO / GOVERNANCA
 # Regra: so promove se E5 PASS + E6 PASS + quorum + sem veto + janela valida
-# pip install rfc8785==0.1.2 cryptography==42.0.5
+# pip install rfc8785==0.1.2  # cryptography: usar a ja instalada no Termux, 42.0.5 exige Rust
 # python e7_all_in_one.py
 import hashlib, re, os, tempfile, json, time
 import rfc8785
@@ -139,7 +139,7 @@ KEYS = {
   "key-e7-02": {"public_key_bytes": P2, "fingerprint": fp(P2), "authorized_for": ["E5", "E6", "E7"], "revoked": False},
   "key-e7-03": {"public_key_bytes": P3, "fingerprint": fp(P3), "authorized_for": ["E5", "E6", "E7"], "revoked": False},
 }
-S1 = {"repository": "github.com/xa-finance/core", "workflow": "verify", "commit_sha": "c9eb1f2f"}
+S1 = {"repository": "github.com/xa-finance/core", "workflow": "verify", "commit_sha": "cbd3911"}
 
 def make_receipt(cid, scope):
     mart = [{"path": "src/runtime/execution.py", "sha256": hashlib.sha256(b"print(1)\n").hexdigest()}]
