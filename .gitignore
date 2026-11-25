@@ -6,3 +6,5 @@ _t_*.json
 *.save
 minha_chave_privada.pem
 evidence.json
+.xa_last_seq.json
+PASS.
