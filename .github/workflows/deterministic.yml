@@ -18,21 +18,17 @@ jobs:
 
       - name: Install deps
         run: |
-          pip install rfc8785 cryptography
+          pip install pytest rfc8785 cryptography
 
       # --- E3-E7 INTACTO - NAO MEXER ---
       - name: Run deterministic loop E3-E7
         run: |
           python3 -m pytest -q
-          # seu verificador atual E3-E7 aqui
-          # se falhar, o job para aqui e NAO da REPLAY_OK
 
       # --- E13 NOVO - GATE ---
       - name: Verify E13 v2 Merkle
         run: |
           python3 e13_all_in_one.py verify
-          # exige E13_LOCAL_VERIFIED
-          # se falhar, o job falha e NAO da REPLAY_OK
 
       - name: REPLAY_OK
         run: echo "REPLAY_OK"
