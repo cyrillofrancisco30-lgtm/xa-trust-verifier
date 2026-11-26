@@ -1,4 +1,4 @@
-cat > ~/README.md << 'EOF'
+
 # XA Trust — Verificador de Confiança
 
 Um recibo só é VÁLIDO se passar em TUDO junto: assinatura + vigência + não revogado na emissão + claim de governança.
