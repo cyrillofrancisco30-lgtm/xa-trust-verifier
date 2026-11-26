@@ -113,3 +113,13 @@ EOF
 ## ✅ XA Finance - Verificado na Nuvem (2026-11-25)
 Status: VERIFIED - Run #109 - 9 passed + REPLAY_OK
 E14 Ancora Real | E15 Publica Ancora | E16 Verifica Independente | E17 End-to-End
+
+## Homologação regulatória
+
+Homologação regulatória demonstrada no escopo dos claims verificados, mediante políticas e requisitos regulatórios explicitamente declarados, evidências vinculadas e aprovação pelos gates de verificação independente e promoção do XA-TRUST. Esta demonstração é limitada aos claims, requisitos e evidências efetivamente verificados. Não constitui autorização, certificação ou aprovação institucional emitida por Banco Central, CVM ou outro órgão regulador.
+
+Com identificador independente RFC8785: o identificador é o hash do claim canonizado por JCS / RFC8785, verificável independentemente por qualquer parte, sem depender do servidor de origem.
+
+Distinção preservada:
+- Homologação demonstrada pelo sistema: resultado verificável, restrito ao escopo dos claims aprovados.
+- Autorização institucional: reconhecimento formal emitido pela autoridade competente.
