@@ -122,7 +122,7 @@ Com identificador independente RFC8785: o identificador é o hash do claim canon
 
 Distinção preservada:
 - Homologação demonstrada pelo sistema: resultado verificável, restrito ao escopo dos claims aprovados.
-- Autorização institucional: reconhecimento formal emitido pela autoridade competente.
+
 
 
 Sistema externo só gera observação / evidência. Nunca gera verificação XA-TRUST.
