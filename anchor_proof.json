@@ -1,10 +1,33 @@
 {
-  "xa": "E13",
-  "batch_id": 1,
-  "merkle_root": "fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
-  "op_return_hex": "6a225841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
-  "txid_simulated": "fa3722b55819af317d5af02b294bb583cd1cf71498db83753ecef9f5a5c6f000",
-  "timestamp": 1795636517,
-  "items": 3,
-  "status": "SIMULATED"
+  "anchored": false,
+  "canonicalization": "JCS-RFC8785",
+  "domain_separation": {
+    "leaf": "0x00",
+    "node": "0x01"
+  },
+  "format": "XA-TRUST-E13-v2",
+  "item_count": 3,
+  "items": [
+    {
+      "claim": "E14",
+      "hash": "bd93dfeb...",
+      "type": "anchor"
+    },
+    {
+      "claim": "E15",
+      "hash": "a1b2c3...",
+      "type": "anchor"
+    },
+    {
+      "claim": "E17",
+      "hash": "d4e5f6...",
+      "type": "e2e"
+    }
+  ],
+  "merkle_root": "a8405809845555fc0ece76e36adc7a77414d6f292b67a3c53ac5016a23a62dff",
+  "merkle_version": 2,
+  "op_return_asm": "OP_RETURN XA a8405809845555fc0ece76e36adc7a77414d6f292b67a3c53ac5016a23a62dff",
+  "op_return_hex": "6a225841a8405809845555fc0ece76e36adc7a77414d6f292b67a3c53ac5016a23a62dff",
+  "state": "E13_PREPARED",
+  "txid": null
 }
