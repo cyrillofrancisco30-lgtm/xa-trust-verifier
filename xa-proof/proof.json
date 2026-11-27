@@ -1,0 +1,10 @@
+{
+  "file": "teste.txt",
+  "ots_file": "teste.txt.ots",
+  "method": "OpenTimestamps - BitcoinBlockHeaderAttestation",
+  "bitcoin_block": 977624,
+  "bitcoin_block_hash": "000000000000000000003e6ee9609b2deb3f667e78c3134d08132906056746ae",
+  "merkle_root": "4b12b5e8e0ff974f952ae0525e95d30e4d61f84a8604e33275f0da483d015175",
+  "verify_url": "https://mempool.space/block/000000000000000000003e6ee9609b2deb3f667e78c3134d08132906056746ae",
+  "verifier": "https://opentimestamps.org"
+}
