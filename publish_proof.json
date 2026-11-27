@@ -1,11 +1,7 @@
 {
-  "batch_id": 1,
   "merkle_root": "fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
-  "op_return_hex": "6a225841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
-  "op_return_asm": "OP_RETURN 585841fc6418f70e1e992f9f49401b79245fffd518570331e9a0764a884da04527e4e7",
-  "status": "PENDING_ONCHAIN",
-  "txid": null,
-  "note": "Transmita esse OP_RETURN numa tx real e preencha o txid aqui",
+  "txid": "377a0291264520b3fcc4f1360d840edebdca20229afaa0546d834fafaf3831b1",
   "block_height": 977628,
-  "explorer": "https://mempool.space/testnet/tx/377a0291264520b3fcc4f1360d840edebdca20229afaa0546d834fafaf3831b1"
+  "status": "CONFIRMED_ONCHAIN",
+  "explorer": "https://mempool.space/tx/377a0291264520b3fcc4f1360d840edebdca20229afaa0546d834fafaf3831b1"
 }
