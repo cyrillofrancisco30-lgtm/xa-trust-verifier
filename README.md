@@ -133,3 +133,22 @@ Sistema externo só gera observação / evidência. Nunca gera verificação XA-
 2. Classifique o item em LEVEL 1, 2 ou 3
 3. Aplique a regra de promoção
 4. Sem evidência de execução, sem promoção.
+
+---
+
+## Âncora Bitcoin - Prova Pública Verificável
+
+Arquivo `teste.txt` ancorado no Bitcoin via OpenTimestamps.
+
+- **Bloco:** 977624
+- **Hash do bloco:** `000000000000000000003e6ee9609b2deb3f667e78c3134d08132906056746ae`
+- **Merkle Root:** `4b12b5e8e0ff974f952ae0525e95d30e4d61f84a8604e33275f0da483d015175`
+- **Arquivo:** `xa-proof/teste.txt`
+- **Prova OTS:** `xa-proof/teste.txt.ots`
+- **Hash SHA256:** `xa-proof/SHA256.txt`
+- **Prova JSON:** `xa-proof/proof.json`
+
+### Verificar a âncora
+
+```bash
+./verify.sh
