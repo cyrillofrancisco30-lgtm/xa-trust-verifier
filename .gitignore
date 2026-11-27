@@ -1,3 +1,14 @@
-keys/
-*.key
-*.bak
+__pycache__/
+*.pyc
+*.save
+*.ots
+.xa_last_seq.json
+_t_*.json
+teste*.txt
+Esta
+PASS.
+ancorar
+assinar
+canonizar
+publicar
+verificar
