@@ -1,0 +1,12 @@
+[
+  {
+    "arquivo": "doc1.txt",
+    "hash": "e8aa91a3955623ed622edc54a424e3d1f5ed81cc1ff89417173105f56aaa29b0",
+    "data": "2026-11-28"
+  },
+  {
+    "arquivo": "doc2.txt",
+    "hash": "87531e59aff841dbb2c2250dfd09c60b51720129875e31310fc01a14f4ab755a",
+    "data": "2026-11-28"
+  }
+]
